@@ -68,7 +68,7 @@ contract lottery {
         require(msg.value == 0.001 ether, "Pls send value = 0.001 ether");
         require(!isGameStart || (block.timestamp <= gameStartTimestamp + T1), "End stage 1");
         require(playerCount < playerMax, "Player reach max");
-        require(players[playersIndex[msg.sender]] == address(0), "You are already in the game");
+        require(msg.sender != players[playersIndex[msg.sender]], "You are already in the game");
 
         reward += 0.001 ether;
         playersHash[msg.sender] = hash;
