@@ -4,48 +4,61 @@ This is a multi-party lottery contract that allow multiple players to join the g
 
 ## Variable Field
 
-![lottery](./1.png){:height="100%" width="100%"}
+![lottery](./1.png)
 `T1` is time of stage 1.
+
 `T2` is time of stage 2.
+
 `T3` is time of stage 3.
+
 `playerMax` is the maximum number of players.
+
 `owner` is the address owner of the contract.
+
 `playersHash` is the hash of the player.
+
 `playersValue` is the value when revealed of the player.
+
 `playerReveal` is the reveal status of the player.
+
 `playerIndex` is the index of the player.
+
 `players` is the address of the player by index.
+
 `playerCount` is the number of players.
+
 `reward` is the reward of the game.
+
 `gameStartTimestamp` is the start time of the game that start when first player join.
+
 `isGameStart` is the status of the game.
 
 ## Constructor
 
-![lottery](./2.png){:height="100%" width="100%"}
+![lottery](./2.png)
 Owner can set `T1`, `T2`, `T3`, `playerMax` in the constructor and also set the `owner` of the contract.
 
 ## Reset Game State
 
-![lottery](./3.png){:height="100%" width="100%"}
+![lottery](./3.png)
 
 Reset game state by reset all the variable field to the initial state.
 
 ## Game State
 
-![lottery](./4.png){:height="100%" width="100%"}
+![lottery](./4.png)
 
 This function is to get the game state of the contract that use for debugging.
 
 ## Hash With Salt
 
-![lottery](./5.png){:height="100%" width="100%"}
+![lottery](./5.png)
 
 This function is to hash the player address with the salt.
 
 ## Stage 1
 
-![lottery](./6.png){:height="100%" width="100%"}
+![lottery](./6.png)
 
 This function is to join the game by sending the hash of value.
 
@@ -58,7 +71,7 @@ Then the player will be added to the game and initialize the player.
 
 ## Stage 2
 
-![lottery](./7.png){:height="100%" width="100%"}
+![lottery](./7.png)
 
 This function is to reveal the value of the player.
 
@@ -70,7 +83,7 @@ Then the player will mark as revealed and the value will be stored.
 
 ## Stage 3
 
-![lottery](./8.png){:height="100%" width="100%"}
+![lottery](./8.png)
 
 This function is to find the winner of the game.
 
@@ -84,7 +97,7 @@ The winner is calculate by xor all the revealed value of the player and hash the
 
 ## Stage 4
 
-![lottery](./9.png){:height="100%" width="100%"}
+![lottery](./9.png)
 
 This function is to withdraw the reward of the player when end of stage 4.
 
